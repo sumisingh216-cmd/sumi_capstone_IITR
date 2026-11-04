@@ -1,6 +1,6 @@
 # -sumi-repo-
  Capstone Project — Delhivery Last-Mile Delay Intelligence Pipeline 
- # **Reasoning**:
+ 
 Create the scripts 'package_model.py' to verify the saved models and package metadata, and 'predict_delay.py' to handle command-line or JSON programmatic inference using the saved regression and classification pipelines.
 
 import os
@@ -137,7 +137,7 @@ res_pred = subprocess.run(['python', 'predict_delay.py'], capture_output=True, t
 print(res_pred.stdout)
 if res_pred.stderr:
     print("Error predict:", res_pred.stderr)
-   # Reasoning: Create the project directories and write the requirements.txt file as specified in the instructions.
+   Reasoning: Create the project directories and write the requirements.txt file as specified in the instructions.
     import os
 
 # Create project directories
@@ -158,7 +158,7 @@ joblib
 with open('requirements.txt', 'w') as f:
     f.write(requirements.strip())
 print("Written requirements.txt")
-# Reasoning: Generate the src/generate_data.py script containing programmatic, realistic synthetic shipment datasets with correlations, then execute it to save data/shipments_raw.csv.
+ Reasoning: Generate the src/generate_data.py script containing programmatic, realistic synthetic shipment datasets with correlations, then execute it to save data/shipments_raw.csv.
 import os
 import numpy as np
 import pandas as pd
@@ -271,7 +271,7 @@ if result.stderr:
    # Task
 Generate a comprehensive, production-ready machine learning system for shipment delay analysis and prediction. The system must set up the environment, generate realistic raw shipment datasets, perform rigorous data preparation and exploratory data analysis (EDA), and train, evaluate, and package both a regression model (predicting continuous delay duration) and a classification model (predicting binary shipment delays). Additionally, perform customer/shipment segmentation, bundle the trained model pipelines, implement an inference script, and document all findings, model results, operational recommendations, production deployment plans, and limitations in a comprehensive README.md file. All datasets must be stored in the "data/" directory, source code in the "src/" directory, and saved model artifacts in the "models/" directory.
 
-# Reasoning: Create the modular preprocessing helper script 'src/shipment_prep.py' containing functions to load, parse, clean, and engineer features from raw shipment data.
+Create the modular preprocessing helper script 'src/shipment_prep.py' containing functions to load, parse, clean, and engineer features from raw shipment data.
 shipment_prep_code = """import pandas as pd
 import numpy as np
 
@@ -303,7 +303,7 @@ with open('src/shipment_prep.py', 'w') as f:
     f.write(shipment_prep_code.strip())
 print("Successfully created src/shipment_prep.py")
 
-# Reasoning: Create and write the main EDA script 'part_a_clean_eda.py' that imports the preprocessing helper from 'src/shipment_prep.py', analyzes delay distribution, carrier performance, route-specific delay, seasonality, saves plots to 'outputs/', and executes it.
+Create and write the main EDA script 'part_a_clean_eda.py' that imports the preprocessing helper from 'src/shipment_prep.py', analyzes delay distribution, carrier performance, route-specific delay, seasonality, saves plots to 'outputs/', and executes it.
 part_a_clean_eda_code = """import os
 import pandas as pd
 import numpy as np
@@ -417,7 +417,7 @@ result = subprocess.run(['python', 'part_a_clean_eda.py'], capture_output=True, 
 print(result.stdout)
 if result.stderr:
     print("Error:", result.stderr)
-   # Reasoning: The previous Python script had a SyntaxError due to raw multi-line backslash escaping inside the triple-quoted string where '\n' was interpreted literally during write. I will write a clean script with proper escaping of backslashes or raw string format to ensure 'part_a_clean_eda.py' executes perfectly.
+ The previous Python script had a SyntaxError due to raw multi-line backslash escaping inside the triple-quoted string where '\n' was interpreted literally during write. I will write a clean script with proper escaping of backslashes or raw string format to ensure 'part_a_clean_eda.py' executes perfectly.
    part_a_clean_eda_code = r"""import os
 import pandas as pd
 import numpy as np
@@ -543,7 +543,7 @@ Create 'src/shipment_prep.py' containing modular functions for cleaning/transfor
  Subtask:
 Develop, train, evaluate, and save regression and classification models to predict shipment delay durations and binary delay occurrences.
 
-# Reasoning: Create and execute the regression script part_b_regression.py to train a model predicting continuous shipment delay durations, evaluate using MAE, RMSE, and R-squared, and save the pipeline to models/.
+ Create and execute the regression script part_b_regression.py to train a model predicting continuous shipment delay durations, evaluate using MAE, RMSE, and R-squared, and save the pipeline to models/.
 part_b_regression_code = r"""import os
 import pandas as pd
 import numpy as np
@@ -628,7 +628,7 @@ result = subprocess.run(['python', 'part_b_regression.py'], capture_output=True,
 print(result.stdout)
 if result.stderr:
     print("Error:", result.stderr)
-   # Reasoning: Correct the sklearn import statement in 'part_b_regression.py' to remove 'sklearn.model_index', implement 'part_c_classification.py' as instructed, and run both scripts to train and save the regression and classification models.
+    Correct the sklearn import statement in 'part_b_regression.py' to remove 'sklearn.model_index', implement 'part_c_classification.py' as instructed, and run both scripts to train and save the regression and classification models.
    part_b_regression_code = r"""import os
 import pandas as pd
 import numpy as np
@@ -772,7 +772,7 @@ if res_clf.stderr:
 Subtask:
 # Perform customer/shipment segmentation using clustering, bundle models, and implement an inference helper script.
 
-# Reasoning: Create and execute the segmentation script part_d_segments.py to cluster carrier-route groups based on delay metrics using K-Means, visualize and save the clustering plot, and output segment summaries.
+Create and execute the segmentation script part_d_segments.py to cluster carrier-route groups based on delay metrics using K-Means, visualize and save the clustering plot, and output segment summaries.
 part_d_segments_code = r"""import os
 import pandas as pd
 import numpy as np
