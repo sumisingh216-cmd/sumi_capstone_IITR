@@ -269,7 +269,7 @@ print(result.stdout)
 if result.stderr:
     print("Error:", result.stderr)
    # Task
-# Generate a comprehensive, production-ready machine learning system for shipment delay analysis and prediction. The system must set up the environment, generate realistic raw shipment datasets, perform rigorous data preparation and exploratory data analysis (EDA), and train, evaluate, and package both a regression model (predicting continuous delay duration) and a classification model (predicting binary shipment delays). Additionally, perform customer/shipment segmentation, bundle the trained model pipelines, implement an inference script, and document all findings, model results, operational recommendations, production deployment plans, and limitations in a comprehensive README.md file. All datasets must be stored in the "data/" directory, source code in the "src/" directory, and saved model artifacts in the "models/" directory.
+Generate a comprehensive, production-ready machine learning system for shipment delay analysis and prediction. The system must set up the environment, generate realistic raw shipment datasets, perform rigorous data preparation and exploratory data analysis (EDA), and train, evaluate, and package both a regression model (predicting continuous delay duration) and a classification model (predicting binary shipment delays). Additionally, perform customer/shipment segmentation, bundle the trained model pipelines, implement an inference script, and document all findings, model results, operational recommendations, production deployment plans, and limitations in a comprehensive README.md file. All datasets must be stored in the "data/" directory, source code in the "src/" directory, and saved model artifacts in the "models/" directory.
 
 # Reasoning: Create the modular preprocessing helper script 'src/shipment_prep.py' containing functions to load, parse, clean, and engineer features from raw shipment data.
 shipment_prep_code = """import pandas as pd
@@ -532,16 +532,16 @@ print(result.stdout)
 if result.stderr:
     print("Error:", result.stderr)
    # Setup Environment and Generate Data
-# Subtask:
-# Set up the workspace directories, write the requirements file, and generate realistic shipment datasets.
+   Subtask:
+Set up the workspace directories, write the requirements file, and generate realistic shipment datasets.
 
 # Implement Data Preparation and EDA
-# Subtask:
-# Create 'src/shipment_prep.py' containing modular functions for cleaning/transforming data, and implement 'part_a_clean_eda.py' to perform robust EDA and produce analytical insights.
+Subtask:
+Create 'src/shipment_prep.py' containing modular functions for cleaning/transforming data, and implement 'part_a_clean_eda.py' to perform robust EDA and produce analytical insights.
 
 # Develop Regression and Classification Models
-# Subtask:
-# Develop, train, evaluate, and save regression and classification models to predict shipment delay durations and binary delay occurrences.
+ Subtask:
+Develop, train, evaluate, and save regression and classification models to predict shipment delay durations and binary delay occurrences.
 
 # Reasoning: Create and execute the regression script part_b_regression.py to train a model predicting continuous shipment delay durations, evaluate using MAE, RMSE, and R-squared, and save the pipeline to models/.
 part_b_regression_code = r"""import os
@@ -769,7 +769,7 @@ print(res_clf.stdout)
 if res_clf.stderr:
     print("Error:", res_clf.stderr)
    # Perform Segmentation and Package Models
-# Subtask:
+Subtask:
 # Perform customer/shipment segmentation using clustering, bundle models, and implement an inference helper script.
 
 # Reasoning: Create and execute the segmentation script part_d_segments.py to cluster carrier-route groups based on delay metrics using K-Means, visualize and save the clustering plot, and output segment summaries.
@@ -860,16 +860,16 @@ print(result.stdout)
 if result.stderr:
     print("Error:", result.stderr)
    # Summary:
-# An elegant, production-ready machine learning system was successfully developed and deployed to analyze, segment, and predict shipment delays using regression, classification, and clustering techniques. Below is a comprehensive summary of the process, key findings, and next steps.
+An elegant, production-ready machine learning system was successfully developed and deployed to analyze, segment, and predict shipment delays using regression, classification, and clustering techniques. Below is a comprehensive summary of the process, key findings, and next steps.
 
 # Data Analysis Key Findings
-# Carrier Performance Disparities: Analysis of carrier-level metrics revealed significant operational variance. SwiftLogistics emerged as the top performer with a low delay rate of ~7.0% and an average delay of 0.56 hours. In contrast, NationalFreight exhibited severe bottleneck issues, with a delay rate of ~35.6% and a mean delay of 3.97 hours.
-# Geographical Bottlenecks: Route distance correlates strongly with delivery variance. Long-haul coast-to-coast routes ending in Seattle (such as New York -> Seattle and Miami -> Seattle) experienced the highest mean delays, exceeding 6.0 hours on average.
-# Seasonal Weather Impact: Seasonality plays a heavy role in shipment disruption. Winter months (November, December, January, and February) saw inflated average delays and elevated delay rates (~30% to 35%) compared to the spring and summer periods.
-# Risk Segmentation Profiles: K-Means clustering ( K=3 ) successfully grouped carrier-route pairs into distinct, actionable risk tiers:
-# Low Risk: Average delay of ~0.96 hours.
-# Medium Risk: Average delay of ~3.16 hours.
-# High Risk: Average delay of ~12.83 hours.
-# Model Evaluation Metrics:
-# Classification (Random Forest): Achieved a robust overall Accuracy of 75.10% and an ROC-AUC of 0.6980 when predicting binary delay occurrences (delay_flag).
-# Regression (Random Forest): Predicts continuous delay hours with a Mean Absolute Error (MAE) of 2.5826 hours.
+Carrier Performance Disparities: Analysis of carrier-level metrics revealed significant operational variance. SwiftLogistics emerged as the top performer with a low delay rate of ~7.0% and an average delay of 0.56 hours. In contrast, NationalFreight exhibited severe bottleneck issues, with a delay rate of ~35.6% and a mean delay of 3.97 hours.
+Geographical Bottlenecks: Route distance correlates strongly with delivery variance. Long-haul coast-to-coast routes ending in Seattle (such as New York -> Seattle and Miami -> Seattle) experienced the highest mean delays, exceeding 6.0 hours on average.
+Seasonal Weather Impact: Seasonality plays a heavy role in shipment disruption. Winter months (November, December, January, and February) saw inflated average delays and elevated delay rates (~30% to 35%) compared to the spring and summer periods.
+Risk Segmentation Profiles: K-Means clustering ( K=3 ) successfully grouped carrier-route pairs into distinct, actionable risk tiers:
+ Low Risk: Average delay of ~0.96 hours.
+ Medium Risk: Average delay of ~3.16 hours.
+High Risk: Average delay of ~12.83 hours.
+ Model Evaluation Metrics:
+ Classification (Random Forest): Achieved a robust overall Accuracy of 75.10% and an ROC-AUC of 0.6980 when predicting binary delay occurrences (delay_flag).
+Regression (Random Forest): Predicts continuous delay hours with a Mean Absolute Error (MAE) of 2.5826 hours.
